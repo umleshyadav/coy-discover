@@ -32,14 +32,3 @@ State is stored in `data/db.json` (created on first request, git-ignored), so sw
 - A match is created only when you like someone who already liked you. Passing on them never reveals it, and a passed profile never returns.
 - The only signal a client gets is `match: true` right after its own like, which is inherent to mutual matching.
 
-## Known limits
-
-- Single hard-coded user, no auth (per the brief). JSON file is read/written whole per request: fine for one user, move to SQLite for concurrency.
-- Placeholder photos are generated SVGs (`/photo?id=N`).
-
-## Part A: two feature suggestions
-
-> DRAFT: written from the assignment brief, not from using the app. Sign up at app.getcoy.com, go through the flows, then edit these so they reflect what you actually felt.
-
-1. **Anonymous nudge to a crush who hasn't joined.** Let a user send an anonymous "someone you know added you on Coy" prompt (no name, no hint) through the invite link. *Why:* a crush can only match if they are on the app, so the invite step is the main drop-off; a privacy-preserving nudge raises conversion without breaking the "never reveal unless mutual" promise.
-2. **Guided first message after a match.** On "It's a match!", offer a few tappable icebreakers (from shared interests) and a gentle reminder if neither side writes within 24h. *Why:* a match that goes silent is the most common dead end in dating apps; helping people open the conversation turns a match into retention.
